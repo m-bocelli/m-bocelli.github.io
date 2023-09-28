@@ -1,0 +1,175 @@
+:root {
+    font-family: Arial;
+    --mint: #afeeee;
+    --grey: #282828;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    background-color: var(--mint); 
+    color: var(--grey);
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    font-weight: bolder; 
+    font-size: larger; 
+    width: 100vw;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #fff;
+    box-shadow: 0px 7px var(--grey);
+}
+
+.main-nav {
+    display: flex;
+}
+
+.student-nav {
+    display: flex;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+.nav-item {
+    margin: 1rem;
+}
+.nav-item a {
+    text-decoration: none; 
+    color: var(--grey);
+}
+
+.nav-item a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--grey);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.nav-item a:hover::after {
+    transform: scaleX(1);
+}
+
+.content-container {
+    margin-top: 5rem;
+    display: grid; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#hero-text {
+    text-align: center; 
+    text-shadow: 1px 1px 1px;
+}
+
+img {
+    border-radius: 10px; 
+    height: 70%; 
+    box-shadow: 7px 7px #fff; 
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #fff; 
+    margin-top: 5rem; 
+    padding: 2px; 
+    text-align: center;
+    font-size: smaller; 
+    font-weight: bold;
+    bottom: 0;
+}
+
+#contact-form {
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 7px 7px var(--grey);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 8px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #AAA;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+input:invalid {
+    background-color: salmon;
+}
+
+textarea.invalid {
+    background-color: salmon;
+}
+
+.required {
+    color: salmon;
+}
+
+
+textarea {
+    min-height: 70px;
+    min-width: 100%;
+}
+
+.submit-button {
+    display: block;
+    margin: auto;
+    font-size: 1.1rem;
+    background-color: var(--mint);
+    border-radius: 10px;
+    padding: 10px 25px;
+    box-shadow: 3px 3px var(--grey);
+    cursor: pointer;
+    transition: font-size 100ms;
+}
+
+.submit-button:hover {
+    font-size: larger;
+}
+
+.form-error {
+    font-size: 90%;
+    color: white;
+    background-color: salmon;
+}
+
+.form-error.active {
+    margin-top: 0.3rem;
+    padding: 0.3em;
+    border-radius: 10px;
+}
+
+.sent-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.sent-message.failure {
+    color: salmon;
+}
