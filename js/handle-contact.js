@@ -5,11 +5,13 @@ const user_phone = document.getElementById('user_phone');
 const user_message = document.getElementById('user_message');
 const contact_form = document.getElementById('contact-form');
 
-const fname_error = document.querySelector('#user_fname + span.form-error');
-const lname_error = document.querySelector('#user_lname + span.form-error');
-const email_error = document.querySelector('#user_email + span.form-error');
-const phone_error = document.querySelector('#user_phone + span.form-error');
-const message_error = document.querySelector('#user_message + span.form-error');
+const fname_error = document.querySelector('#user_fname + div.form-error');
+const lname_error = document.querySelector('#user_lname + div.form-error');
+const email_error = document.querySelector('#user_email + div.form-error');
+const phone_error = document.querySelector('#user_phone + div.form-error');
+const message_error = document.querySelector('#user_message + div.form-error');
+
+const sent_message = document.querySelector('button + div.sent-message');
 
 // format: any_text_except_whitespace@any_text_except_whitespace.any_text_except_whitespace
 const email_regex = /^\S{1,}[@]\S{1,}[.]\S{1,}$/; 
@@ -33,10 +35,14 @@ contact_form.addEventListener('submit', (ev) => {
    
     if (validateForm()) {
         emailjs.send('contact_service', 'contact_form', form_fields)
-            .then(() => console.log(`Email sent.`))
+            .then(() => {
+                sent_message.className = 'sent-message success';
+                sent_message.textContent = 'Email sent successfully :)'; 
+            })
             .catch(err => console.log(`Error sending email: ${err}`));
     } else {
-        console.log('invalid form');
+        sent_message.className = 'sent-message failure'; 
+        sent_message.textContent = 'Please fix the invalid fields'; 
     }
 });
 
@@ -57,6 +63,7 @@ function validateFName() {
         fname_error.className = 'form-error';
     } else {
         fname_error.textContent = 'A first name is required.';
+        fname_error.className = 'form-error active';
     }
 
     return is_valid;
@@ -70,6 +77,7 @@ function validateLName() {
         lname_error.className = 'form-error';
     } else {
         lname_error.textContent = 'A last name is required.';
+        lname_error.className = 'form-error active';
     }
 
     return is_valid;
@@ -119,6 +127,7 @@ function validateMessage() {
         message_error.className = 'form-error';
     } else {
         message_error.textContent = 'A message is required.';
+        message_error.className = 'form-error active';
     }
 
     return is_valid;

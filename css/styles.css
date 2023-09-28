@@ -101,6 +101,7 @@ textarea.invalid {
 
 textarea {
     min-height: 70px;
+    min-width: 100%;
 }
 
 .submit-button {
@@ -116,18 +117,27 @@ textarea {
 }
 
 .submit-button:hover {
-     font-size: larger;
+    font-size: larger;
 }
 
 .form-error {
-  width: 100%;
-  padding: 0;
-
-  font-size: 80%;
-  color: white;
-  background-color: salmon;
+    font-size: 90%;
+    color: white;
+    background-color: salmon;
 }
 
 .form-error.active {
-  padding: 0.3em;
+    margin-top: 0.3rem;
+    padding: 0.3em;
+    border-radius: 10px;
+}
+
+.sent-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.sent-message.failure {
+    color: salmon;
 }
