@@ -1,10 +1,11 @@
+// GET NECESSARY DOCUMENT ELEMENTS
 const user_fname = document.getElementById('user_fname');
 const user_lname = document.getElementById('user_lname');
 const user_email = document.getElementById('user_email');
 const user_phone = document.getElementById('user_phone');
 const user_message = document.getElementById('user_message');
 const contact_form = document.getElementById('contact-form');
-
+// GET ERROR FRAMES FOR EACH ELEMENT
 const fname_error = document.querySelector('#user_fname + div.form-error');
 const lname_error = document.querySelector('#user_lname + div.form-error');
 const email_error = document.querySelector('#user_email + div.form-error');
@@ -19,12 +20,20 @@ const email_regex = /^\S{1,}[@]\S{1,}[.]\S{1,}$/;
 // format: 3 digits - 3 digits - 4 digits
 const phone_regex = /^[0-9]\d{2}-?[0-9]\d{2}-?[0-9]\d{3}$/; 
 
+/**
+ * Driver code:
+ *
+ * On each submit of the contact form, check if
+ * form fields are valid, then send email via 
+ * emailjs SDK.
+ */
 contact_form.addEventListener('submit', (ev) => {
     ev.preventDefault();
     (() => {
         emailjs.init('ztzlIyaNRAdIu1PhQ');
     })();
 
+    // Parameters for emailjs.send()
     const form_fields = {
         user_fname: user_fname.value,
         user_lname: user_lname.value,
@@ -32,7 +41,8 @@ contact_form.addEventListener('submit', (ev) => {
         user_phone: user_phone.value,
         user_message: user_message.value
     };
-   
+  
+    // Validate form before sending
     if (validateForm()) {
         emailjs.send('contact_service', 'contact_form', form_fields)
             .then(() => {
@@ -46,6 +56,7 @@ contact_form.addEventListener('submit', (ev) => {
     }
 });
 
+// Get validation results from all form fields
 function validateForm() {
     const valid_fname = validateFName();
     const valid_lname = validateLName();
@@ -56,6 +67,7 @@ function validateForm() {
 }
 
 function validateFName() {
+    // first name cannot be null
     const is_valid = user_fname.value.length > 0;
 
     if (is_valid) {
@@ -70,6 +82,7 @@ function validateFName() {
 }
 
 function validateLName() {
+    // last name cannot be null
     const is_valid = user_lname.value.length > 0;
 
     if (is_valid) {
@@ -84,7 +97,9 @@ function validateLName() {
 }
 
 function validateEmail() {
+    // email must match the regex pattern defined above
     const is_format = email_regex.test(user_email.value); 
+    // cannot be null
     const is_empty = user_email.value.length < 1;
     const is_valid = is_format && !is_empty;
 
@@ -103,7 +118,9 @@ function validateEmail() {
 }
 
 function validatePhone() {
+    // phone number must match the regex pattern defined above
     const is_format = phone_regex.test(user_phone.value); 
+    // phone number cannot be null
     const is_empty = user_phone.value.length < 1;
     const is_valid = is_format && !is_empty;
     if (is_valid) {
@@ -120,6 +137,7 @@ function validatePhone() {
 }
 
 function validateMessage() {
+    // message cannot be null
     const is_valid = user_message.value.length > 0;
 
     if (is_valid) {

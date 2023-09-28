@@ -12,6 +12,7 @@
         <script defer src="../js/handle-contact.js"></script>
     </head>
     <body> 
+        <!-- NAVIGATION PANEL -->
         <nav class="navbar">
             <div class="main-nav">
                 <div id="nav1" class="nav-item">
@@ -48,13 +49,16 @@
                 </div>
             </div>
         </nav>
+        <!-- MAIN CONTENT -->
         <div class="content-container">
             <h1 id="hero-text">
                 Got something to say?
             </h1>
+            <!-- CONTACT FORM -->
             <section id="contact">
                 <h2>Contact me</h2>
                 <form novalidate id="contact-form">
+                    <!-- FIRST NAME FIELD -->
                     <div class="input-group">  
                         <label for="user_fname">
                             First name <span class="required">*</span>
@@ -62,6 +66,7 @@
                         <input type="text" name="user_fname" id="user_fname" placeholder="e.g. Edmond">
                         <div class="form-error" aria-live="polite"></div>
                     </div>
+                    <!-- LAST NAME FIELD -->
                     <div class="input-group">  
                         <label for="user_lname">
                             Last name <span class="required">*</span>
@@ -69,6 +74,7 @@
                         <input type="text" name="user_lname" id="user_lname" placeholder="e.g. Dantes">
                         <div class="form-error" aria-live="polite"></div>
                     </div>
+                    <!-- EMAIL FIELD -->
                     <div class="input-group">  
                         <label for="user_email">
                             Email <span class="required">*</span>
@@ -76,6 +82,7 @@
                         <input type="text" name="user_email" id="user_email" placeholder="xyz@<domain>.<top-level domain>">
                             <div class="form-error" aria-live="polite"></div>
                     </div>
+                    <!-- PHONE NUMBER FIELD -->
                     <div class="input-group">  
                         <label for="user_phone">
                             Phone number <span class="required">*</span>
@@ -83,6 +90,7 @@
                         <input type="text" name="user_phone" id="user_phone" placeholder="XXX-XXX-XXXX">
                         <div class="form-error" aria-live="polite"></div>
                     </div>
+                    <!-- MESSAGE FIELD -->
                     <div class="input-group">  
                         <label for="user_message">
                             Message <span class="required">*</span>
@@ -97,6 +105,7 @@
                 </form>
             </section>
         </div>
+        <!-- FOOTER -->
         <footer>
             <p>Name: Michael Bocelli | Course: CISC474 | Assignment: Personal Web Page 2 | Email: mbocelli@udel.edu
             </p>
