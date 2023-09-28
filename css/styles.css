@@ -86,6 +86,10 @@ input, textarea {
     font-family: Arial;
 }
 
+input:invalid {
+    background-color: red;
+}
+
 textarea {
     min-height: 70px;
 }
