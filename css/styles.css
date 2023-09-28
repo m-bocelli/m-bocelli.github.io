@@ -87,8 +87,17 @@ input, textarea {
 }
 
 input:invalid {
-    background-color: red;
+    background-color: salmon;
 }
+
+textarea.invalid {
+    background-color: salmon;
+}
+
+.required {
+    color: salmon;
+}
+
 
 textarea {
     min-height: 70px;
@@ -108,4 +117,17 @@ textarea {
 
 .submit-button:hover {
      font-size: larger;
+}
+
+.form-error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: salmon;
+}
+
+.form-error.active {
+  padding: 0.3em;
 }
