@@ -4,7 +4,13 @@ const user_email = document.getElementById('user_email');
 const user_phone = document.getElementById('user_phone');
 const user_message = document.getElementById('user_message');
 const contact_form = document.getElementById('contact-form');
+
+const fname_error = document.querySelector('#user_fname + span.form-error');
+const lname_error = document.querySelector('#user_lname + span.form-error');
 const email_error = document.querySelector('#user_email + span.form-error');
+const phone_error = document.querySelector('#user_phone + span.form-error');
+const message_error = document.querySelector('#user_message + span.form-error');
+
 // format: any_text_except_whitespace@any_text_except_whitespace.any_text_except_whitespace
 const email_regex = /^\S{1,}[@]\S{1,}[.]\S{1,}$/g; 
 
@@ -24,8 +30,14 @@ contact_form.addEventListener('submit', (ev) => {
         user_phone: user_phone.value,
         user_message: user_message.value
     };
-    
-    if(validateEmail()) {
+   
+    const valid_fname = validateFName();
+    const valid_lname = validateLName();
+    const valid_message = validateMessage();
+    const valid_email = validateEmail();
+    const valid_phone = validatePhone();
+
+    if(valid_email && valid_phone) {
         emailjs.send('contact_service', 'contact_form', form_fields)
             .then(() => console.log(`Email sent.`))
             .catch(err => console.log(`Error sending email: ${err}`));
@@ -53,3 +65,21 @@ function validateEmail() {
     return is_valid;
 }
 
+function validatePhone() {
+    const is_format = phone_regex.test(user_phone.value); 
+    const is_empty = user_phone.value.length < 1;
+    const is_valid = is_format && !is_empty;
+
+    if (is_valid) {
+        phone_error.textContent = '';
+        phone_error.className = 'form-error';
+    } else if (!is_format && !is_empty) {
+        phone_error.textContent = 'Required format: XXX-XXX-XXXX, where X is 0-9';
+        phone_error.className = 'form-error active';
+    } else {
+        phone_error.textContent = 'A phone number is required.';
+        phone_error.className = 'form-error active';
+    }
+
+    return is_valid;
+}
