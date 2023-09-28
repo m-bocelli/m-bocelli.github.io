@@ -17,7 +17,7 @@ const sent_message = document.querySelector('button + div.sent-message');
 const email_regex = /^\S{1,}[@]\S{1,}[.]\S{1,}$/; 
 
 // format: 3 digits - 3 digits - 4 digits
-const phone_regex = /^[0-9]\d{2}-[0-9]\d{2}-[0-9]\d{3}$/; 
+const phone_regex = /^[0-9]\d{2}-?[0-9]\d{2}-?[0-9]\d{3}$/; 
 
 contact_form.addEventListener('submit', (ev) => {
     ev.preventDefault();
