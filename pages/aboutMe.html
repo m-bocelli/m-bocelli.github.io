@@ -1,61 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="CISC474 Personal website assignment">
-        <meta name="author" content="Michael Bocelli">
-        <link rel="icon" type="image/ico" href="../img/favicon.ico">
-        <link rel="stylesheet" href="../css/styles.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="CISC474 Personal website assignment"
+        />
+        <meta name="author" content="Michael Bocelli" />
+        <link rel="icon" type="image/ico" href="../img/favicon.ico" />
+        <link rel="stylesheet" href="../css/styles.css" />
         <title>Mikey | About me</title>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-LRDC6CC9QY"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-LRDC6CC9QY');
+        </script>
     </head>
     <body>
         <!-- NAVIGATION PANEL -->
-        <nav class="navbar">
-            <div class="main-nav">
-                <div id="nav1" class="nav-item">
-                    <a href="/">
-                        HOME
-                    </a>
-                </div>
-                <div id="nav2" class="nav-item">
-                    <a>
-                        ABOUT
-                    </a>
-                </div>
-                <div id="nav3" class="nav-item">
-                    <a href="contactMe.html">
-                        CONTACT
-                    </a>
-                </div>
-                <div id="nav4" class="nav-item">
-                    <a href="https://mattm401.github.io/" target="_blank">
-                        COURSE PAGE
-                    </a>
-                </div>
-            </div>
-            <div class="student-nav">
-                <div id="nav5" class="nav-item">
-                    <a href="https://pkamath87.github.io/">
-                        PREV. STUDENT
-                    </a>
-                </div>
-                <div id="nav6" class="nav-item">
-                    <a href="https://ahilynd.github.io/">
-                        NEXT STUDENT
-                    </a>
-                </div>
-            </div>
-        </nav>
+        <nav id="navbar" class="navbar"></nav>
         <!-- MAIN CONTENT -->
         <div class="content-container">
-            <h1 id="hero-text">
-                About Me
-            </h1>
+            <h1 id="hero-text">About Me</h1>
             <section>
-                <h2>
-                    Hobbies
-                </h2>
+                <h2>Hobbies</h2>
                 <ul>
                     <li>Weightlifting</li>
                     <li>Game dev.</li>
@@ -64,17 +42,11 @@
                 </ul>
             </section>
             <section>
-                <h2>
-                    Interesting fact
-                </h2>
-                <p>
-                    I can speak German.
-                </p>
+                <h2>Interesting fact</h2>
+                <p>I can speak German.</p>
             </section>
             <section>
-                <h2>
-                    Watchlist    
-                </h2>
+                <h2>Watchlist</h2>
                 <ul>
                     <li>Utopia (British vers.)</li>
                     <li>Pirates of the Caribbean: Curse of the Black Pearl</li>
@@ -84,9 +56,7 @@
                 </ul>
             </section>
             <section>
-                <h2>
-                    What I'm excited about
-                </h2>
+                <h2>What I'm excited about</h2>
                 <ul>
                     <li>Integrating backend with the frontend</li>
                     <li>Working with advanced APIs</li>
@@ -95,10 +65,8 @@
             </section>
         </div>
         <!-- FOOTER -->
-        <footer>
-            <p>Name: Michael Bocelli | Course: CISC474 | Assignment: Personal Web Page 1 | Email: mbocelli@udel.edu | Course site: 
-            <a href="https://mattm401.github.io/" target="_blank">https://mattm401.github.io/</a>
-            </p>
-        </footer>
+        <footer id="footer"></footer>
+        <script src="../js/navbar.js"></script>
+        <script src="../js/footer.js"></script>
     </body>
 </html>

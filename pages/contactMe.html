@@ -1,114 +1,119 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="CISC474 Personal website assignment">
-        <meta name="author" content="Michael Bocelli">
-        <link rel="icon" type="image/ico" href="../img/favicon.ico">
-        <link rel="stylesheet" href="../css/styles.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="CISC474 Personal website assignment"
+        />
+        <meta name="author" content="Michael Bocelli" />
+        <link rel="icon" type="image/ico" href="../img/favicon.ico" />
+        <link rel="stylesheet" href="../css/styles.css" />
         <title>Mikey | Contact me</title>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script defer src="../js/handle-contact.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-LRDC6CC9QY"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-LRDC6CC9QY');
+        </script>
     </head>
-    <body> 
+    <body>
         <!-- NAVIGATION PANEL -->
-        <nav class="navbar">
-            <div class="main-nav">
-                <div id="nav1" class="nav-item">
-                    <a href="/">
-                        HOME
-                    </a>
-                </div>
-                <div id="nav2" class="nav-item">
-                    <a href="aboutMe.html">
-                        ABOUT
-                    </a>
-                </div>
-                <div id="nav3" class="nav-item">
-                    <a>
-                        CONTACT
-                    </a>
-                </div>
-                <div id="nav4" class="nav-item">
-                    <a href="https://mattm401.github.io/" target="_blank">
-                        COURSE PAGE
-                    </a>
-                </div>
-            </div>
-            <div class="student-nav">
-                <div id="nav5" class="nav-item">
-                    <a href="https://pkamath87.github.io/">
-                        PREV. STUDENT
-                    </a>
-                </div>
-                <div id="nav6" class="nav-item">
-                    <a href="https://ahilynd.github.io/">
-                        NEXT STUDENT
-                    </a>
-                </div>
-            </div>
-        </nav>
+        <nav id="navbar" class="navbar"></nav>
         <!-- MAIN CONTENT -->
         <div class="content-container">
-            <h1 id="hero-text">
-                Got something to say?
-            </h1>
+            <h1 id="hero-text">Got something to say?</h1>
             <!-- CONTACT FORM -->
             <section id="contact">
                 <h2>Contact me</h2>
                 <form novalidate id="contact-form">
                     <!-- FIRST NAME FIELD -->
-                    <div class="input-group">  
+                    <div class="input-group">
                         <label for="user_fname">
                             First name <span class="required">*</span>
                         </label>
-                        <input type="text" name="user_fname" id="user_fname" placeholder="e.g. Edmond">
+                        <input
+                            type="text"
+                            name="user_fname"
+                            id="user_fname"
+                            placeholder="e.g. Edmond"
+                        />
                         <div class="form-error" aria-live="polite"></div>
                     </div>
                     <!-- LAST NAME FIELD -->
-                    <div class="input-group">  
+                    <div class="input-group">
                         <label for="user_lname">
                             Last name <span class="required">*</span>
                         </label>
-                        <input type="text" name="user_lname" id="user_lname" placeholder="e.g. Dantes">
+                        <input
+                            type="text"
+                            name="user_lname"
+                            id="user_lname"
+                            placeholder="e.g. Dantes"
+                        />
                         <div class="form-error" aria-live="polite"></div>
                     </div>
                     <!-- EMAIL FIELD -->
-                    <div class="input-group">  
+                    <div class="input-group">
                         <label for="user_email">
                             Email <span class="required">*</span>
                         </label>
-                        <input type="text" name="user_email" id="user_email" placeholder="xyz@<domain>.<top-level domain>">
-                            <div class="form-error" aria-live="polite"></div>
+                        <input
+                            type="text"
+                            name="user_email"
+                            id="user_email"
+                            placeholder="xyz@<domain>.<top-level domain>"
+                        />
+                        <div class="form-error" aria-live="polite"></div>
                     </div>
                     <!-- PHONE NUMBER FIELD -->
-                    <div class="input-group">  
+                    <div class="input-group">
                         <label for="user_phone">
                             Phone number <span class="required">*</span>
                         </label>
-                        <input type="text" name="user_phone" id="user_phone" placeholder="XXX-XXX-XXXX">
+                        <input
+                            type="text"
+                            name="user_phone"
+                            id="user_phone"
+                            placeholder="XXX-XXX-XXXX"
+                        />
                         <div class="form-error" aria-live="polite"></div>
                     </div>
                     <!-- MESSAGE FIELD -->
-                    <div class="input-group">  
+                    <div class="input-group">
                         <label for="user_message">
                             Message <span class="required">*</span>
                         </label>
-                        <textarea name="user_message" id="user_message" placeholder="Message"></textarea>
+                        <textarea
+                            name="user_message"
+                            id="user_message"
+                            placeholder="Message"
+                        ></textarea>
                         <div class="form-error" aria-live="polite"></div>
                     </div>
-                    <div class="input-group">  
-                        <button class="submit-button" type="submit">Send</button>
+                    <div class="input-group">
+                        <button class="submit-button" type="submit">
+                            Send
+                        </button>
                         <div class="sent-message" aria-live="polite"></div>
                     </div>
                 </form>
             </section>
         </div>
         <!-- FOOTER -->
-        <footer>
-            <p>Name: Michael Bocelli | Course: CISC474 | Assignment: Personal Web Page 2 | Email: mbocelli@udel.edu
-            </p>
-        </footer>
+        <footer id="footer"></footer>
+        <script src="../js/navbar.js"></script>
+        <script src="../js/footer.js"></script>
     </body>
 </html>

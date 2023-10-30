@@ -1,24 +1,33 @@
 :root {
-    font-family: Arial;
+    font-family: 'Fira Code';
     --mint: #afeeee;
     --grey: #282828;
 }
 
 body {
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
-    background-color: var(--mint); 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--mint);
     color: var(--grey);
     margin: 0;
+}
+
+.class-links-label {
+    cursor: pointer;
+}
+
+.class-links {
+    margin-top: 70px;
+    display: block;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
     position: fixed;
-    font-weight: bolder; 
-    font-size: larger; 
+    font-weight: bolder;
+    font-size: larger;
     width: 100vw;
     justify-content: space-between;
     align-content: center;
@@ -40,7 +49,7 @@ body {
     margin: 1rem;
 }
 .nav-item a {
-    text-decoration: none; 
+    text-decoration: none;
     color: var(--grey);
 }
 
@@ -59,30 +68,31 @@ body {
 }
 
 .content-container {
-    margin-top: 5rem;
-    display: grid; 
-    justify-content: center; 
+    margin: 5rem;
+    display: grid;
+    justify-content: center;
     align-items: center;
 }
 
 #hero-text {
-    text-align: center; 
+    margin: 2rem;
+    text-align: center;
     text-shadow: 1px 1px 1px;
 }
 
 img {
-    border-radius: 10px; 
-    height: 70%; 
-    box-shadow: 7px 7px #fff; 
+    border-radius: 10px;
+    height: 70%;
+    box-shadow: 7px 7px #fff;
     margin: 0 auto;
 }
 
 footer {
-    background-color: #fff; 
-    margin-top: 5rem; 
-    padding: 2px; 
+    background-color: #fff;
+    margin-top: 5rem;
+    padding: 2px;
     text-align: center;
-    font-size: smaller; 
+    font-size: smaller;
     font-weight: bold;
     bottom: 0;
 }
@@ -108,12 +118,13 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 8px;
     border-radius: 10px;
     width: 100%;
     max-width: 100%;
-    border: 1px solid #AAA;
+    border: 1px solid #aaa;
     box-sizing: border-box;
     font-family: Arial;
 }
@@ -129,7 +140,6 @@ textarea.invalid {
 .required {
     color: salmon;
 }
-
 
 textarea {
     min-height: 70px;
