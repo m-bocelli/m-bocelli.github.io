@@ -36,6 +36,9 @@ navbar.innerHTML = `
                 <a href="${path}portfolio.html"> PORTFOLIO </a>
             </div>
             <div id="nav3" class="nav-item">
+                <a href="${path}resume.html"> RESUME </a>
+            </div>
+            <div id="nav4" class="nav-item">
                 <a href="${path}contactMe.html"> CONTACT </a>
             </div>
         </div>

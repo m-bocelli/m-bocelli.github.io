@@ -15,12 +15,17 @@ get_repos().then(
             .map((repo) =>
                 !repo.topics.includes('school')
                     ? `
-                        <a href="${repo.html_url}" target="_blank" class="project-link">
+                        <a href="${
+                            repo.html_url
+                        }" target="_blank" class="project-link">
                             <div class="project-card">
                                 <h3 class="project-title">
                                     ${repo.name}
                                 </h3>
                                 <div>${repo.description}</div>
+                                <ul>${repo.topics
+                                    .map((topic) => `<li>${topic}</li>`)
+                                    .join('')}
                             </div>
                         </a>
                     `
