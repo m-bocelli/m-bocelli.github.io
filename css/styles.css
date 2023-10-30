@@ -20,13 +20,12 @@ body {
     margin: 0;
     padding-left: 0;
     width: 100%;
-    border-radius: 5px;
 }
 
 .dropdown-content li {
     list-style: none;
     border: solid black 2px;
-    border-radius: 5px;
+    padding: 0.25rem;
 }
 
 .dropdown-content li a {
@@ -38,6 +37,21 @@ body {
 
 .dropdown-content li a:hover {
     font-size: 1.2rem;
+}
+
+.hamburger-nav {
+    margin: 1rem;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: var(--grey);
+    width: 2rem;
+    height: 5px;
+    margin: 3px;
+    border-radius: 5px;
 }
 
 .navbar {
@@ -159,6 +173,46 @@ textarea {
     min-width: 100%;
 }
 
+.portfolio-button {
+    text-decoration: none;
+}
+
+.portfolio-button button {
+    display: block;
+    margin: auto;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    box-shadow: 3px 3px var(--grey);
+    cursor: pointer;
+    transition: font-size 100ms;
+}
+
+.portfolio-button button:hover {
+    font-size: larger;
+}
+
+.project-card {
+    background-color: var(--grey);
+    color: #fff;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition-property: color, background-color;
+    transition-duration: 0.5s;
+}
+
+.project-card:hover {
+    color: var(--grey);
+    background-color: #fff;
+}
+
+.project-link {
+    text-decoration: none;
+}
+
 .submit-button {
     display: block;
     margin: auto;
@@ -195,4 +249,41 @@ textarea {
 
 .sent-message.failure {
     color: salmon;
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        background: transparent;
+        box-shadow: none;
+        flex-direction: column;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        background-color: #fff;
+        width: 12rem;
+        display: none;
+    }
+
+    .dropdown-menu {
+        background-color: #fff;
+        width: 12rem;
+        display: none;
+    }
+
+    .dropdown-content {
+        width: 12rem;
+    }
+
+    .nav-item {
+        display: flex;
+    }
+
+    .hamburger-nav {
+        display: flex;
+    }
+
+    .content-container {
+        margin: 3rem;
+    }
 }
