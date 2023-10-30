@@ -13,13 +13,31 @@ body {
     margin: 0;
 }
 
-.class-links-label {
-    cursor: pointer;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
+    border-radius: 5px;
 }
 
-.class-links {
-    margin-top: 70px;
-    display: block;
+.dropdown-content li {
+    list-style: none;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+.dropdown-content li a {
+    color: var(--grey);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: font-size 0.3s;
+}
+
+.dropdown-content li a:hover {
+    font-size: 1.2rem;
 }
 
 .navbar {
@@ -39,14 +57,9 @@ body {
     display: flex;
 }
 
-.student-nav {
-    display: flex;
-    margin-right: 1rem;
-    text-align: right;
-}
-
 .nav-item {
     margin: 1rem;
+    cursor: pointer;
 }
 .nav-item a {
     text-decoration: none;

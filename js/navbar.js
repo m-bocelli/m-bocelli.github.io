@@ -1,23 +1,11 @@
-const navbar = document.getElementById('navbar');
-navbar.insertAdjacentHTML(
-    'afterend',
-    `
-    <div hidden id="class-links" class="class-links">
-        <div class="class-link">
-            <a href="https://pkamath87.github.io/"> PREV. STUDENT </a>
-        </div>
-        <div class="class-link">
-            <a href="https://ahilynd.github.io/"> NEXT STUDENT </a>
-        </div>
-    </div>
-    `
-);
+// Script for reusable navbar component
 
 let path = window.location.pathname === '/' ? 'pages/' : '';
 
-function test() {
-    const class_links = document.getElementById('class-links');
-    class_links.hidden = !class_links.hidden;
+function toggle_dropdown() {
+    const dropdown = document.getElementById('dropdown');
+    const curr_display = dropdown.style.display;
+    dropdown.style.display = curr_display === 'block' ? 'none' : 'block';
 }
 
 navbar.innerHTML = `
@@ -31,12 +19,14 @@ navbar.innerHTML = `
     <div id="nav3" class="nav-item">
         <a href="${path}contactMe.html"> CONTACT </a>
     </div>
-    <div id="nav4" class="nav-item">
-        <a href="https://mattm401.github.io/" target="_blank"> COURSE PAGE </a>
-    </div>
 </div>
 
-<div class="student-nav">
-    <label class="class-links-label" onClick="test()">Class Links</label>
+<div class="dropdown-menu">
+    <div class="nav-item"><a onClick="toggle_dropdown()"> CLASS LINKS </a></div>
+    <ul id="dropdown" class="dropdown-content">
+        <li><a href="https://pkamath87.github.io/"> PREV. STUDENT </a></li>
+        <li><a href="https://ahilynd.github.io/"> NEXT STUDENT </a></li>
+        <li><a href="https://mattm401.github.io/" target="_blank"> COURSE PAGE </a></li>
+    </ul>
 </div>
 `;
